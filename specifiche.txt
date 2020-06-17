@@ -1,0 +1,31 @@
+Per quanto riguarda i casi d'uso proposti, questi sono stati implementati tutti a livello di metodi nelle classi entità, repository e service; non si può dire lo stesso a livello di controller in quanto sono stati implementati solo alcuni casi d'uso, in particolare abbiamo implementato:
+- Signup di un utente;
+- Autenticazione di un utente;
+- Visualizzazione del proprio profilo;
+- Creazione di un nuovo progetto;
+- Aggiunta di un task ad un progetto;
+- Aggiunta di un tag ad un progetto (estensione);
+- Visualizzazione dei propri progetti;
+- Aggiornamento dei dati di un progetto;
+- Cancellazione di un proprio progetto;
+
+L'utente apre il sito web e si trova a dover scegliere se effettuare il login o la registrazione: nel caso della registrazione verranno richiesti 4 parametri tutti obbligatori come username, password, nome e cognome e con opportuni messaggi di errore qualora uno o più di questi non dovessero rispettare dei pattern predefiniti (definiti nel file messaggiErrore). A registrazione effettuata con successo il nuovo utente viene invitato a recarsi sulla sua pagina personale, la quale verrà mostrata a seguito del login.
+
+Nella propria pagina personale, l'utente può:
+A) vedere i propri dati personali;
+B) creare un nuovo progetto;
+C) vedere i propri progetti;
+D) effettuare il logout dal sito.
+
+A) I dati personali che l'utente può vedere sono: nome, cognome, username, ruolo presso il sito web e data di registrazione sul sito.
+
+B) Nel caso in cui l'utente volesse creare un nuovo progetto, dovrà semplicemente validarne un nome e darne la conferma. Qualora dovessero esistere già progetti con quel nome nel sito, verrà restituito un messaggio di errore e l'utente sarà invitato a sceglierne uno diverso.
+
+C) Nel caso in cui l'utente scelga di visualizzare i propri progetti, questi verranno elencati in una pagina apposita. A questo punto l'utente avrà la possibilità di aprire ciascuno di questi progetti a seconda del proprio scopo e potrà:
+1- verificare dettagli ulteriori relativi a quei singoli progetti (come la data di creazione, tutti i task e tutti i tag);
+2- aggiornarli, scegliendo un nuovo nome (che non dovrà essere uguale a nomi di progetti già esistenti nel sito);
+3- cancellarli;
+4- aggiungervi un task, inserendone un nome ed una descrizione (che dovranno rispettare i pattern definiti in messaggiErrore);
+5- aggiungervi un tag, inserendone un nome, una descrizione ed un colore (che dovranno rispettare i pattern definiti in messaggiErrore).
+
+D) L'utente verrà semplicemente sloggato dal sito a seguito di una conferma.
