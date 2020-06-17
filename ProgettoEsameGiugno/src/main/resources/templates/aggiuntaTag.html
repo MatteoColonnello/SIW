@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Progetto Esame - Giugno 2020</title>
+    <link rel=stylesheet th:href="@{/css/foglio6.css}">
+   
+</head>
+<body>
+	<h1> Stai aggiungendo un TAG al tuo progetto </h1>
+	<form id = "aggiuntaTag"
+      th:action="@{'/aggiuntaTag/' + ${progettoForm.id}}"
+      method="POST">
+      
+       <table>
+        <tr>
+            <td><label for="nomeTagInput">Inserisci il nome del tag: </label>
+            <td><input id=nomeTagInput type="text" placeholder="NOME" required th:field = "${tagForm.nome}"/></td>
+            <td th:if="${#fields.hasErrors('tagForm.nome')}" th:errors="${tagForm.nome}" th:style="'color:red'"></td>
+        </tr>
+        
+        <tr>
+            <td><label for="descrizioneTagInput">Inserisci una descrizione per il tag: </label>
+            <td><input id=descrizioneTagInput type="text" placeholder="DESCRIZIONE" required th:field = "${tagForm.descrizione}"/></td>
+			 <td th:if="${#fields.hasErrors('tagForm.descrizione')}" th:errors="${tagForm.descrizione}" th:style="'color:red'"></td>        
+        </tr>
+        
+        <tr>
+            <td><label for="coloreTagInput">Scegli un colore per il tag: </label>
+            <td><input id=coloreTagInput type="text" placeholder="COLORE" required th:field = "${tagForm.colore}"/></td>
+        	<td th:if="${#fields.hasErrors('tagForm.colore')}" th:errors="${tagForm.colore}" th:style="'color:red'"></td>
+        </tr>
+       	<tr>
+       	<td><button type="submit"> Aggiungi </button></td>
+       </tr>
+    </table>
+    </form>
+ </body>
+</html>

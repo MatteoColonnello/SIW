@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Progetto Esame - Giugno 2020</title>
+     <link rel=stylesheet th:href="@{/css/foglio3.css}">
+</head>
+
+<body>
+	<h1> Crea un nuovo progetto </h1>
+	<form id = "creazioneProgetto"
+      th:action="@{/creazioneProgetto}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="nomeProgettoInput">Nome progetto</label>
+            <td><input id=nomeProgettoInput type="text" th:field = "${progettoForm.nome}" placeholder="NOME" required/></td>
+            <td th:if="${#fields.hasErrors('progettoForm.nome')}" th:errors="${progettoForm.nome}" th:style="'color:red'"></td>
+  		</tr>
+       	<tr>
+       	<td><button type="submit"> Crea </button></td>
+       </tr>
+    </table>
+  </form>
+ </body>
+</html>
+    

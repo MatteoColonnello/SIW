@@ -1,0 +1,25 @@
+h1{
+    font-style: oblique;
+    font-size: 40pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center; 
+}
+
+table {
+  margin: 0 auto;
+  font-style: oblique;
+  font-size: 15pt;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center; 
+} 
+
+button{
+	position: relative;
+	top: 25px;
+	left: 75px;
+}
+
+
+html {
+    background-color: lightseagreen;
+}

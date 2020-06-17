@@ -1,0 +1,18 @@
+h1{
+    font-style: oblique;
+    font-size: 30pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+p{
+	 font-style: oblique;
+    font-size: 25pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+html{
+	background-color: #9ce487;
+}
+

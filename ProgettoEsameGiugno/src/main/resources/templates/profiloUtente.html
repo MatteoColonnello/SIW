@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Progetto Esame - Giugno 2020</title>
+   <link rel=stylesheet th:href="@{/css/foglio1.css}">
+</head>
+
+<body>
+<h1>Ecco il tuo profilo:</h1>
+    <table>
+        <tr>
+            <td>Username</td>
+            <td th:text="${credentials.username}">.</td>
+        </tr>
+        <tr>
+            <td>Nome</td>
+            <td th:text="${utente.nome}">.</td>
+        </tr>
+        <tr>
+            <td>Cognome</td>
+            <td th:text="${utente.cognome}">.</td>
+        </tr>
+        <tr>
+            <td>Ruolo</td>
+            <td th:text="${credentials.ruolo}">.</td>
+        </tr>
+        <tr>
+            <td>Ti sei registrato il: </td>
+            <td th:text="${utente.dataCreazione}">.</td>
+        </tr>
+    </table>
+</body>
+</html>

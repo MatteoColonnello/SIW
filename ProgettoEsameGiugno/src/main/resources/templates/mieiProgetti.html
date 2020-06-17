@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Progetto Esame - Giugno 2020</title>
+   <link rel=stylesheet th:href="@{/css/foglio2.css}">
+</head>
+<body>
+		<h1> PROGETTI </h1>
+<div> 
+	<table>
+		<thead>
+			<tr>
+				<th> Nome progetti: </th>
+			</tr>
+		</thead>
+	<tbody>
+		<tr th:each = "progetto : ${progettiCreati}" >
+			<td><a th:href= "'/progetti/' +  ${progetto.id}" th:text = "${progetto.nome}" >...</a></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div>
+		<form th:action="@{'/paginaUtente'}" method="GET">
+		<input type="submit" value="Torna alla pagina principale">
+		</form>
+</div>
+
+</body>
+</html>

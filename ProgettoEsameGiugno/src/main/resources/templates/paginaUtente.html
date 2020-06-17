@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Progetto Esame - Giugno 2020</title>
+   <link rel=stylesheet th:href="@{/css/foglio.css}">
+</head>
+<body>
+<h1 th:text="'Benvenuto nella tua pagina, ' + ${utente.nome} + '!'"></h1>
+<h4><a href="/profiloUtente">Vai al tuo profilo</a></h4>
+<h4><a href="/progetti">I miei progetti</a></h4>
+<h4><a href="/creazioneProgetto">Crea un nuovo progetto</a></h4>
+<h4><a href="/logout">Effettua il Logout</a></h4>
+
+</body>
+</html>

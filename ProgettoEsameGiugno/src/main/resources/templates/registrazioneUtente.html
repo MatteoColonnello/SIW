@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <title>Progetto Esame - Giugno 2020</title>
+    <link rel=stylesheet th:href="@{/css/foglio7.css}">
+</head>
+
+<body>
+<h1>Effettua la registrazione</h1>
+<form id = "formRegistrazione"
+      th:action="@{/registrazioneUtente}"
+      method="POST">
+
+    <table>
+        <tr>
+            <td><label for="usernameInput">Username</label>
+            <td><input id=usernameInput type="text" th:field="${credentialsForm.username}" placeholder="USERNAME" required/></td>
+            <td th:if="${#fields.hasErrors('credentialsForm.username')}" th:errors="${credentialsForm.username}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="passwordInput">Password</label></td>
+            <td><input id="passwordInput" type="password" th:field="${credentialsForm.password}" placeholder="PASSWORD"/></td>
+            <td th:if="${#fields.hasErrors('credentialsForm.password')}" th:errors="${credentialsForm.password}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="nomeInput">Nome</label></td>
+            <td><input id="nomeInput" type="text" th:field="${utenteForm.nome}" placeholder="NOME"/></td>
+            <td th:if="${#fields.hasErrors('utenteForm.nome')}" th:errors="${utenteForm.nome}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td><label for="cognomeInput">Cognome</label></td>
+            <td><input id="cognomeInput" type="text" th:field="${utenteForm.cognome}" placeholder="COGNOME"/></td>
+            <td th:if="${#fields.hasErrors('utenteForm.cognome')}" th:errors="${utenteForm.cognome}" th:style="'color:red'"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Registrati ora</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

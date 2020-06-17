@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Progetto Esame - Giugno 2020</title>
+   <link rel=stylesheet th:href="@{/css/foglio4.css}">
+</head>
+
+<body>
+<h1 th:text= "'Nome del progetto: '+ ${progetto.nome}"></h1>
+<h4 th:text= "'Data di inizio: ' + ${progetto.dataInizio}"></h4>
+
+
+<h3> Tasks del progetto: </h3>
+<ul> 
+	<li th:each = "task : ${progetto.tasks}">
+	<div th:text = "'Nome del task: ' + ${task.nometask}"> </div>
+	<div th:text = "'Descrizione del task: ' + ${task.descrizione}" style = "..."></div>	
+	</li>
+</ul>
+
+<h3> Tags del progetto: </h3>
+<ul> 
+	<li th:each = "tag : ${progetto.tags}">
+	<div th:text = "'Nome del tag: ' + ${tag.nome}"> </div>
+	<div th:text = "'Descrizione del tag: ' + ${tag.descrizione}" style = "..."></div>	
+	<div th:text = "'Colore del tag: ' + ${tag.colore}" style = "..."></div>	
+	</li>
+</ul>
+
+<div>
+		<a th:href ="@{'/aggiornaProgetto/' + ${progetto.id}}">
+		<input type="submit" value="Aggiorna il nome del progetto">
+		</a>
+</div>
+
+<div>
+		<a th:href ="@{'/aggiuntaTask/' + ${progetto.id}}">
+		<input type="submit" value="Aggiungi un task al progetto">
+		</a>
+</div>
+
+<div>
+		<a th:href ="@{'/aggiuntaTag/' + ${progetto.id}}">
+		<input type="submit" value="Aggiungi un tag al progetto">
+		</a>
+</div>
+
+<div>
+		<form th:action="@{'/cancellazioneProgetto' + '/' + ${progetto.id}}" method = "GET">
+		<input type="submit" value="Cancella progetto">
+		</form>
+</div>
+<div>
+		<form th:action="@{'/progetti'}" method="GET">
+		<input type="submit" value="Torna ai tuoi progetti">
+		</form>
+</div>
+<div>
+		<a th:href="@{'/paginaUtente'}">
+		<input type="submit" value="Torna alla pagina principale">
+		</a>
+</div>
+</body>
+</html>
